@@ -24,10 +24,10 @@ public class Server {
 	private static JTextArea msg_area;
 
 	
-	 	static ServerSocket skt;
-	    static Socket s;
-	    static DataInputStream din;
-	    static DataOutputStream dout;
+	 static ServerSocket skt;
+	 static Socket s;
+	 static DataInputStream din;
+	 static DataOutputStream dout;
 	/**
 	 * Launch the application.
 	 */
@@ -104,7 +104,7 @@ public class Server {
 					out = out.substring(0,1).toUpperCase() + out.substring(1).toLowerCase();
 					msg_area.setText(msg_area.getText()+"\n Me: "+out);
 					dout.writeUTF(out);
-		            msg_text.setText("");
+		            		msg_text.setText("");
 					
 				} catch (Exception e2) {
 					// TODO: handle exception

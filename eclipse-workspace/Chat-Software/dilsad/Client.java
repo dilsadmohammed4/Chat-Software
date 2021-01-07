@@ -29,9 +29,9 @@ public class Client {
 	private static JTextField msg_text;
 	private static JTextArea msg_area;
 	
-	 	static  Socket s;
-	    static DataInputStream din;
-	    static DataOutputStream dout;
+	 static  Socket s;
+	 static DataInputStream din;
+	 static DataOutputStream dout;
 
 	/**
 	 * Launch the application.
@@ -44,18 +44,16 @@ public class Client {
 		});
 		String msginput="";
 		try {
-				Client window = new Client();
-				window.frame.setVisible(true);
 			
-				s=new Socket("127.0.0.1",1201);
-                din=new DataInputStream(s.getInputStream());
-                dout=new DataOutputStream(s.getOutputStream());
-                while (!msginput.equals("exit")) {
-
-                  msginput=din.readUTF();
-                    msg_area.setText(msg_area.getText()+"\n Dilsad: "+msginput);
+			Client window = new Client();
+			window.frame.setVisible(true);
+			s=new Socket("127.0.0.1",1201);
+                	din=new DataInputStream(s.getInputStream());
+                	dout=new DataOutputStream(s.getOutputStream());
+	                while (!msginput.equals("exit")) {msginput=din.readUTF();
+                   	msg_area.setText(msg_area.getText()+"\n Dilsad: "+msginput);
 					
-				}
+			}
 			
 			
 		} catch (Exception e) {
@@ -107,7 +105,7 @@ public class Client {
 					out = out.substring(0,1).toUpperCase() + out.substring(1).toLowerCase();
 					msg_area.setText(msg_area.getText()+"\n Me: "+out);
 					dout.writeUTF(out);
-		            msg_text.setText("");
+		            		msg_text.setText("");
 					
 				} catch (Exception e2) {
 					// TODO: handle exception

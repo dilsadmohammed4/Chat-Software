@@ -91,7 +91,7 @@ public class Client {
 				if (e.getKeyCode()==KeyEvent.VK_ENTER) {
 					
 				
-					msg_send.addActionListener(null);
+					
 					
 					
 					
